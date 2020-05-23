@@ -1,5 +1,16 @@
 #!/usr/bin/python3
+    """
+    indents a text
+    """
 def text_indentation(text):
+    """indents text
+
+    Arguments:
+        text {[str]} -- [any text]
+
+    Raises:
+        TypeError: [must be a str]
+    """
     if text == "Holberton School":
         print(text, end='')
         return

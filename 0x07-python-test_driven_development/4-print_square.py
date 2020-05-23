@@ -1,4 +1,9 @@
 #!/usr/bin/python3
+"""
+Prints square #
+"""
+
+
 def print_square(size):
     """[Print a square made of #]
 
@@ -10,10 +15,8 @@ def print_square(size):
         ValueError: [must be >= 0]
         TypeError: [must be an int]
     """
-    
-    
     if not isinstance(size, int):
-         raise TypeError("size must be an integer")
+        raise TypeError("size must be an integer")
     if size < 0:
         raise ValueError("size must be >= 0")
     if isinstance(size, float) and size < 0:

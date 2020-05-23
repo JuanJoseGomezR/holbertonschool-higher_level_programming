@@ -6,8 +6,7 @@ a function that divides all elements of a matrix.
 
 def matrix_divided(matrix, div):
     """
-    >>> matrix_divided([[1, 2, 3], [4, 5, 6]], 3)
-    [[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+    matrix divided
     """
     matri_x = []
     if not isinstance(div, (int, float)):
