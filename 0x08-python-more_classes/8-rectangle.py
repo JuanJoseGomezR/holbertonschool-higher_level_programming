@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-    """
+"""
 
     Raises:
         TypeError: [description]
@@ -15,7 +15,7 @@
 
     Returns:
         [type] -- [description]
-    """
+"""
 
 
 class Rectangle:
