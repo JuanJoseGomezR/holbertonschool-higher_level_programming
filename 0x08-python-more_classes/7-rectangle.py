@@ -1,9 +1,4 @@
 #!/usr/bin/python3
-"""
-defines a rectangle
-"""
-
-
 class Rectangle:
     print_symbol = '#'
     number_of_instances = 0
