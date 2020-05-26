@@ -1,25 +1,13 @@
 #!/usr/bin/python3
 """
-
-    Raises:
-        TypeError: [description]
-        ValueError: [description]
-        TypeError: [description]
-        ValueError: [description]
-        TypeError: [description]
-        ValueError: [description]
-        TypeError: [description]
-        ValueError: [description]
-
-    Returns:
-        [type] -- [description]
+defines a rectangle
 """
 
 
 class Rectangle:
     print_symbol = '#'
     number_of_instances = 0
-    """Real Rectangle."""
+    """rectan"""
     def __init__(self, width=0, height=0):
         """Init"""
         if type(width) != int:
