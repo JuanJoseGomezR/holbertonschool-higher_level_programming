@@ -1,17 +1,17 @@
 #!/usr/bin/python3
 """
-A Rectangle
+defines a rectangle
 """
 
 
 class Rectangle:
     """
-    functions and data
+    classes
     """
     number_of_instances = 0
 
     def __init__(self, width=0, height=0):
-        """instatiation
+        """inst
         """
         self.width = width
         self.height = height
@@ -19,13 +19,13 @@ class Rectangle:
 
     @property
     def width(self):
-        """Getter width
+        """width
         """
         return self.__width
 
     @width.setter
     def width(self, value):
-        """Setter width
+        """Sets width
         """
         if type(value) != int:
             raise TypeError("width must be an integer")
@@ -35,13 +35,13 @@ class Rectangle:
 
     @property
     def height(self):
-        """Getter height
+        """Gets height
         """
         return self.__height
 
     @height.setter
     def height(self, value):
-        """Setter height
+        """Sets height
         """
         if type(value) != int:
             raise TypeError("height must be an integer")
