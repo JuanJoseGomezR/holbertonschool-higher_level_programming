@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""
+"""[summary]
 
     Raises:
         TypeError: [description]
@@ -32,9 +32,9 @@ class Rectangle:
         self.__height = height
 
     @property
-        def width(self):
-            """width"""
-            return self.__width
+    def width(self):
+        """width"""
+        return self.__width
 
     @width.setter
     def width(self, value):
@@ -46,9 +46,9 @@ class Rectangle:
         self.__width = value
 
     @property
-        def height(self):
-            """height"""
-            return self.__height
+    def height(self):
+        """height"""
+        return self.__height
 
     @height.setter
     def height(self, value):
