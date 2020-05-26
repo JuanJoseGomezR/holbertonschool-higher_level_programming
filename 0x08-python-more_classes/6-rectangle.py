@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""
+"""[summary]
 
     Raises:
         TypeError: [description]
