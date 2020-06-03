@@ -10,5 +10,5 @@ def read_file(filename=""):
         filename {str} -- [description] (default: {""})
     """
     with open(filename, encoding='utf-8') as file:
-        read_cont = file.read() 
+        read_cont = file.read()
         print(read_cont, end='')
