@@ -14,26 +14,6 @@ from io import StringIO
 class TestRectangleClass(unittest.TestCase):
     """Test class for rectangle"""
 
-    def test1_all_attrs(self):
-        """Full attributes"""
-        rec = Rectangle(4, 5, 2, 3, 1)
-        self.assertEqual(str(rec), "[Rectangle] (1) 2/3 - 4/5")
-
-    def test2_no_id(self):
-        """Missing ID"""
-        rec = Rectangle(1, 2, 3, 4)
-        self.assertEqual(str(rec), "[Rectangle] (19) 3/4 - 1/2")
-
-    def test3_no_id_y(self):
-        """Missing ID, y"""
-        rec = Rectangle(1, 2, 3)
-        self.assertEqual(str(rec), "[Rectangle] (20) 3/0 - 1/2")
-
-    def test4_no_id_x_y(self):
-        """Missing ID, y, x"""
-        rec = Rectangle(1, 2)
-        self.assertEqual(str(rec), "[Rectangle] (21) 0/0 - 1/2")
-
     def test5_raiseError_noheight(self):
         """Raise error no height"""
         self.assertRaises(TypeError, Rectangle, 1)
@@ -41,16 +21,6 @@ class TestRectangleClass(unittest.TestCase):
     def test6_raiseError_nowidth(self):
         """Raise error no width"""
         self.assertRaises(TypeError, Rectangle)
-
-    def test7_id(self):
-        """ID count"""
-        rec5 = Rectangle(10, 1)
-        self.assertEqual(rec5.id, 22)
-
-    def test8_check_id(self):
-        """Check increment ID count"""
-        r6 = Rectangle(6, 9)
-        self.assertEqual(r6.id, 23)
 
     def test9_check_width(self):
         """Check width"""
@@ -100,13 +70,6 @@ class TestRectangleClass(unittest.TestCase):
                                Rectangle,
                                -1, 2, 0, 0, 12)
 
-    def test_check_height_TypeError_01(self):
-        """Test TypeError for height in Rectangle"""
-        self.assertRaisesRegex(TypeError,
-                               'height must be an integer',
-                               Rectangle,
-                               2, 'string', 0, 0, 12)
-
     def test_check_height_TypeError_02(self):
         """Test TypeError for height in Rectangle"""
         self.assertRaisesRegex(TypeError,
@@ -121,19 +84,6 @@ class TestRectangleClass(unittest.TestCase):
                                Rectangle,
                                1, -2, 0, 0, 12)
 
-    def test_x(self):
-        """x of rectangle"""
-        rec0 = Rectangle(10, 2)
-        self.assertEqual(r1.x, 0)
-
-        rec1 = Rectangle(2, 10, 6)
-        self.assertEqual(rec1.x, 6)
-
-        squarejustkidding = Rectangle(5, 2, 3, 9, 12)
-        self.assertEqual(squarejustkidding.x, 3)
-
-        ALMOSTACIRCLE = Rectangle(5, 2, 0, 3, 12)
-        self.assertEqual(ALMOSTACIRCLE.x, 0)
 
     def test_x_TypeError_01(self):
         """TypeError for x in Rectangle but on purpose"""
@@ -190,59 +140,6 @@ class TestRectangleClass(unittest.TestCase):
                                'y must be >= 0',
                                Rectangle,
                                4, 2, 0, -6, 12)
-
-    def test_update(self):
-        """Test update"""
-        output = StringIO()
-        sys.stdout = output
-        r1 = Rectangle(11, 12, 11, 12)
-        r1.update(89)
-        r1.update(89, 2)
-        r1.update(89, 2, 3)
-        r1.update(89, 2, 3, 4)
-        r1.update(89, 2, 3, 4, 5)
-        print(r1)
-        sys.stdout = sys.__stdout__
-        assert output.getvalue() == "[Rectangle] (89) 4/5 - 2/3\n"
-
-    def test_update_extra(self):
-        """Update with extra parameters"""
-        output = StringIO()
-        sys.stdout = output
-        r1 = Rectangle(10, 10, 10, 10)
-        r1.update(89, 2, 3, 4, 5, 6, 7)
-        print(r1)
-        sys.stdout = sys.__stdout__
-        assert output.getvalue() == "[Rectangle] (89) 4/5 - 2/3\n"
-
-    def test_update_no_param(self):
-        """extra parameters"""
-        r1 = Rectangle(10, 10, 10, 10)
-        r1.update()
-        self.assertEqual(str(r1), "[Rectangle] (36) 10/10 - 10/10")
-
-    def test_kwargs(self):
-        """Test kwargs"""
-        r1 = Rectangle(10, 10, 10, 10)
-        r1.update(x=1, height=2, y=4, width=4)
-        self.assertEqual(str(r1), "[Rectangle] (32) 1/4 - 4/2")
-
-    def test_kwargs_extra_keys(self):
-        """Test kwargs with extra parameters"""
-        r1 = Rectangle(10, 10, 10, 10)
-        r1.update(x=1, height=2, y=3, width=4, banu=89)
-        self.assertEqual(str(r1), "[Rectangle] (33) 1/3 - 4/2")
-
-    def test_inputs50(self):
-        """test inputs square class"""
-        r1 = Rectangle(1, 2, 3, 4, 5)
-        self.assertEqual(str(r1), "[Rectangle] (5) 3/4 - 1/2")
-        r2 = Rectangle(1, 2, 3, 4)
-        self.assertEqual(str(r2), "[Rectangle] (29) 3/4 - 1/2")
-        r3 = Rectangle(1, 2, 3)
-        self.assertEqual(str(r3), "[Rectangle] (30) 3/0 - 1/2")
-        r4 = Rectangle(1, 2)
-        self.assertEqual(str(r4), "[Rectangle] (31) 0/0 - 1/2")
 
 if __name__ == '__main__':
     unittest.main()

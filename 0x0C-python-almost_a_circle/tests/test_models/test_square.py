@@ -33,11 +33,6 @@ class TestSquareClass(unittest.TestCase):
         """square list input"""
         self.assertRaises(TypeError, Square, [69, 619])
 
-    def test5_str2(self):
-        """check string output"""
-        s2 = Square(6)
-        self.assertEqual(str(s2), "[Square] (39) 0/0 - 6")
-
     def test6_updates(self):
         """check if updates args"""
         s3 = Square(3)
@@ -49,24 +44,6 @@ class TestSquareClass(unittest.TestCase):
         s4 = Square(size=5)
         s4.update(size=551)
         self.assertEqual(s4.size, 551)
-
-    def test8_updates(self):
-        """check multiple args"""
-        s5 = Square(1, 2, 3, 4)
-        s5.update(5, 6, 7, 8)
-        self.assertEqual(str(s5), "[Square] (5) 7/8 - 6")
-
-    def test9_updates(self):
-        """check multiple kwargs"""
-        s6 = Square(2)
-        s6.update(id=5, size=2, x=4, y=6)
-        self.assertEqual(str(s6), "[Square] (5) 4/6 - 2")
-
-    def test10_updates(self):
-        """check 2 kwargs update"""
-        s7 = Square(3)
-        s7.update(size=69, id=4)
-        self.assertEqual(str(s7), "[Square] (4) 0/0 - 69")
 
 if __name__ == '__main__':
     unittest.main()
