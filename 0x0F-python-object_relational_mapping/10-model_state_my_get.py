@@ -15,6 +15,7 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
+    a = 0
     for i in session.query(State).order_by(State.id):
         if i.name == argv[4]:
             print("{}".format(i.id))
