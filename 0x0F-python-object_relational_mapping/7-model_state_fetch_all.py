@@ -13,3 +13,6 @@ engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}'
 Base.metadata.create_all(engine)
 Session = sessionmaker(bind=engine)
 session = Session()
+for i in session.query(State).order_by(State.id):
+    print("{}: {}".format(i.id, i.name))
+session.close()
