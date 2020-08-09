@@ -3,6 +3,7 @@
 from model_state import Base, State
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
+from model_city import City
 from sys import argv
 import MySQLdb
 
@@ -15,10 +16,8 @@ if __name__ == "__main__":
     Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    result = session.query(State).order_by(State.id)
-    for i in result:
-        name = i.name
-        if 'a' in name:
-            session.delete(i)
-            session.commit()
+    store = session.query(City, State).filter(City.state_id == State.id)
+    for i in store:
+        print("{}: ({}) {}".format(i.State.name, i.City.id,
+                                   i.City.name))
     session.close()
