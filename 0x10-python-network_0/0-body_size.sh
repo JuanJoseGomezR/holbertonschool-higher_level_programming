@@ -1,4 +1,4 @@
 #!/bin/bash
 # Displays size in bytes
 
-curl "$1" | wc -c
+curl -s "$1" | wc -c
