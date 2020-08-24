@@ -1,4 +1,4 @@
-!/usr/bin/python3
+#!/usr/bin/python3
 """ Post email """
 import urllib.request
 import urllib.parse
