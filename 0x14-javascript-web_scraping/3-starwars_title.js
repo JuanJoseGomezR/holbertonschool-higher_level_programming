@@ -1,11 +1,15 @@
 #!/usr/bin/node
 const request = require('request');
+const id = process.argv[2];
+const url = 'https://swapi-api.hbtn.io/api/films/' + id;
 
-request.get(`http://swapi.co/api/films/${process.argv[2]}`, (error, response, body) => {
-  if (error) {
-    console.log(error);
-    return;
+request.get(url, (err, response, body) => {
+  if (err) {
+    console.log(err);
+  } else {
+    if (response.statusCode === 200) {
+      const rJson = JSON.parse(body);
+      console.log(rJson.title);
+    }
   }
-  const derulo = JSON.parse(body);
-  console.log(derulo.title);
 });
