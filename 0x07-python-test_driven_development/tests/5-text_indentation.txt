@@ -1,0 +1,26 @@
+>>> test = __import__('5-text_indentation').text_indentation
+
+>>> test("""     Hi. 1: 2? Hello    """)
+Hi.
+<BLANKLINE>
+1:
+<BLANKLINE>
+2?
+<BLANKLINE>
+Hello
+
+>>> test(""".:?""")
+.
+<BLANKLINE>
+:
+<BLANKLINE>
+?
+<BLANKLINE>
+
+>>> test("""Hi2Hello""")
+Hi2Hello
+
+>>> test(None)
+Traceback (most recent call last):
+    ...
+TypeError: text must be a string
